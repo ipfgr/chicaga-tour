@@ -10,6 +10,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
+import css from "rollup-plugin-import-css";
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -40,10 +41,11 @@ const baseConfig = {
       'process.env.ES_BUILD': JSON.stringify('false'),
     },
     vue: {
-      css: true,
+      css: false,
       template: {
         isProduction: true,
       },
+      
     },
     babel: {
       exclude: 'node_modules/**',
@@ -80,12 +82,14 @@ if (!argv.format || argv.format === 'es') {
       exports: 'named',
     },
     plugins: [
+ 
       replace({
         ...baseConfig.plugins.replace,
         'process.env.ES_BUILD': JSON.stringify('true'),
       }),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
+      css(),
       babel({
         ...baseConfig.plugins.babel,
         presets: [
@@ -119,6 +123,7 @@ if (!argv.format || argv.format === 'cjs') {
     plugins: [
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
+      css(),
       vue({
         ...baseConfig.plugins.vue,
         template: {
@@ -150,6 +155,7 @@ if (!argv.format || argv.format === 'iife') {
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
+      css(),
       babel(baseConfig.plugins.babel),
       commonjs(),
       terser({

@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});require('styles/base.css');/*! shepherd.js 10.0.1 */
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});/*! shepherd.js 10.0.1 */
 
 var isMergeableObject = function isMergeableObject(value) {
   return isNonNullObject(value) && !isSpecial(value);

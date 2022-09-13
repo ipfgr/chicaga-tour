@@ -1,7 +1,7 @@
 {
   "name": "chicaga-tour",
   "version": "0.1.0",
-  "description": "A Vue wrapper for the site tour library Shepherd.",
+  "description": "Wrapper for the site tour library Shepherd.",
   "author": {
     "name": "",
     "url": "https://github.com/ipfgr"
@@ -29,11 +29,14 @@
     "dist/chicaga-tour.esm.js.map",
     "dist/chicaga-tour.min.js",
     "dist/chicaga-tour.ssr.js",
+    "dist/styles/base.css",
     "package.json",
     "README.md",
     "src"
   ],
   "dependencies": {
+    "rollup-plugin-import-css": "^3.0.3",
+    "rollup-plugin-postcss": "^4.0.2",
     "shepherd.js": "^10.0.1"
   },
   "devDependencies": {
@@ -58,6 +61,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-filesize": "^9.1.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-vue": "^6.0.0",
     "vue": "^2.7.10",

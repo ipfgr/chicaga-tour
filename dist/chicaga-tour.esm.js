@@ -1,5 +1,3 @@
-import 'styles/base.css';
-
 /*! shepherd.js 10.0.1 */
 
 var isMergeableObject = function isMergeableObject(value) {
