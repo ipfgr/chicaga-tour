@@ -112,7 +112,7 @@ if (!argv.format || argv.format === 'cjs') {
       compact: true,
       file: 'dist/chicaga-tour.ssr.js',
       format: 'cjs',
-      name: 'VueShepherd',
+      name: 'ChicagaTour',
       exports: 'named',
       globals,
     },
