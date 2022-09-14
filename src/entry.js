@@ -1,6 +1,6 @@
 import Shepherd from 'shepherd.js';
 import "./styles/base.css";
-
+import './images/background.jpg';
 // install function executed by Vue.use()
 const install = function installChicagaTour(Vue) {
   if (install.installed) return;

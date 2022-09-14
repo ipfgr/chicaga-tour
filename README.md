@@ -2,14 +2,7 @@
 
 <a href="https://shipshape.io/"><img src="http://i.imgur.com/DWHQjA5.png" alt="Ship Shape" width="100" height="100"/></a>
 
-**[chicaga-tour is built and maintained by Ship Shape. Contact us for web app consulting, development, and training for your project](https://shipshape.io/)**.
-
-[![npm version](https://badge.fury.io/js/chicaga-tour.svg)](http://badge.fury.io/js/chicaga-tour)
-![Download count all time](https://img.shields.io/npm/dt/chicaga-tour.svg)
-[![npm](https://img.shields.io/npm/dm/chicaga-tour.svg)]()
-[![Build Status](https://travis-ci.org/shipshapecode/chicaga-tour.svg)](https://travis-ci.org/shipshapecode/chicaga-tour)
-[![Code Climate](https://codeclimate.com/github/shipshapecode/chicaga-tour/badges/gpa.svg)](https://codeclimate.com/github/shipshapecode/chicaga-tour)
-[![Test Coverage](https://codeclimate.com/github/shipshapecode/chicaga-tour/badges/coverage.svg)](https://codeclimate.com/github/shipshapecode/chicaga-tour/coverage)
+**[chicaga-tour is a wrapper for VueJS with custom styles by Chicaga for Shepherd.js tour lib. Contact us for web app consulting, development, and training for your project.](https://shipshape.io/)**.
 
 This is a Vue wrapper for the [Shepherd](https://github.com/shipshapecode/shepherd), site tour, library.
 
@@ -19,6 +12,13 @@ This is a Vue wrapper for the [Shepherd](https://github.com/shipshapecode/shephe
 
 ```bash
 npm install chicaga-tour --save
+```
+
+
+Import styles to App.vue:
+
+```css
+@import '~chicaga-tour/dist/css/chicaga-tour.min.css';
 ```
 
 When using with a module system, you must explicitly install chicaga-tour via Vue.use():
@@ -49,8 +49,29 @@ Vue.use(ChicagaTour);
         });
 
         tour.addStep({
-          attachTo: { element: this.$el, on: 'top' },
-          text: 'Test step',
+          title: 'Welcome to Chicaga-tour',
+          text: `Creating a tour is easy. too!\
+          Just create a \`Tour\` instance, and add as many steps as you want.`,
+          attachTo: {
+            element: '.tour-example',
+            on: 'bottom'
+          },
+          buttons: [
+            {
+              action() {
+                return this.back();
+              },
+              classes: 'shepherd-button-secondary',
+              text: 'Back'
+            },
+            {
+              action() {
+                return this.next();
+              },
+              text: 'Next'
+            }
+          ],
+          id: 'creating'
         });
 
         tour.start();

@@ -6085,7 +6085,7 @@ class Tour extends Evented {
 Object.assign(Shepherd, {
   Tour,
   Step
-});const install = function installChicagaTour(Vue) {
+});require('./background.jpg');const install = function installChicagaTour(Vue) {
   if (install.installed) return;
   install.installed = true;
 

@@ -1,22 +1,32 @@
+
 .shepherd-button {
-    background: #3288e6;
-    border: 0;
-    border-radius: 3px;
-    color: hsla(0, 0%, 100%, .75);
-    cursor: pointer;
-    margin-right: .5rem;
-    padding: .5rem 1.5rem;
-    transition: all .5s ease
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 32px;
+    gap: 16px;
+    color: white;
+    width: 152px;
+    height: 48px;
+    background: linear-gradient(180deg, #FE6664 0%, #FE373E 100%), #FF787C;
+    box-shadow: 0px 2px 0px #CC2D23;
+    border-radius: 16px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
 }
 
 .shepherd-button:not(:disabled):hover {
-    background: #196fcc;
     color: hsla(0, 0%, 100%, .75)
 }
 
 .shepherd-button.shepherd-button-secondary {
-    background: #f1f2f3;
-    color: rgba(0, 0, 0, .75)
+    background: white;
+    box-shadow: none;
+    color: #808080;
+    border: 1.5px solid #808080;
 }
 
 .shepherd-button.shepherd-button-secondary:not(:disabled):hover {
@@ -29,11 +39,9 @@
 }
 
 .shepherd-footer {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    margin-top: 24px;
     display: flex;
-    justify-content: flex-end;
-    padding: 0 .75rem .75rem
+    justify-content: space-between;
 }
 
 .shepherd-footer .shepherd-button:last-child {
@@ -61,43 +69,38 @@
 }
 
 .shepherd-has-title .shepherd-content .shepherd-cancel-icon:hover {
-    color: rgba(0, 0, 0, .75)
+    color: black;
 }
 
 .shepherd-title {
-    color: rgba(0, 0, 0, .75);
-    display: flex;
-    flex: 1 0 auto;
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0;
-    padding: 0
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
 }
 
 .shepherd-header {
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    display: flex;
-    justify-content: flex-end;
     line-height: 2em;
-    padding: .75rem .75rem 0
 }
 
 .shepherd-has-title .shepherd-content .shepherd-header {
-    background: #e6e6e6;
-    padding: 1em
-}
+    margin-bottom: 16px;}
 
 .shepherd-text {
     color: rgba(0, 0, 0, .75);
     font-size: 1rem;
     line-height: 1.3em;
-    padding: .75em
 }
 
 .shepherd-text p {
-    margin-top: 0
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    color: #323232;
 }
 
 .shepherd-text p:last-child {
@@ -111,8 +114,16 @@
 }
 
 .shepherd-element {
-    background: #fff;
-    border-radius: 5px;
+    /* background: url(Слой x0020 1.jpg); */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    filter: drop-shadow(0px 4px 20px rgba(128, 128, 128, 0.2));
+    border-radius: 20px;
+    background: url('./background.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
     max-width: 400px;
     opacity: 0;

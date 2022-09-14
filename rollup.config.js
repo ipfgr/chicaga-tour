@@ -11,6 +11,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
 import css from "rollup-plugin-import-css";
+import images from 'rollup-plugin-image-files';
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -89,7 +90,11 @@ if (!argv.format || argv.format === 'es') {
       }),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
-      css(),
+      css({
+        minify: true,
+      }),
+      images({
+      }),
       babel({
         ...baseConfig.plugins.babel,
         presets: [
@@ -123,7 +128,11 @@ if (!argv.format || argv.format === 'cjs') {
     plugins: [
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
-      css(),
+      css({
+        minify: true,
+      }),
+      images({
+      }),
       vue({
         ...baseConfig.plugins.vue,
         template: {
@@ -155,7 +164,11 @@ if (!argv.format || argv.format === 'iife') {
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
-      css(),
+      css({
+        minify: true,
+      }),
+      images({
+      }),
       babel(baseConfig.plugins.babel),
       commonjs(),
       terser({

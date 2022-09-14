@@ -6087,6 +6087,8 @@ Object.assign(Shepherd, {
   Step
 });
 
+require('./background.jpg');
+
 const install = function installChicagaTour(Vue) {
   if (install.installed) return;
   install.installed = true;
