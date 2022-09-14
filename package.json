@@ -1,6 +1,6 @@
 {
   "name": "chicaga-tour",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Wrapper for the site tour library Shepherd with chigaca styles.",
   "author": {
     "name": "",

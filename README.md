@@ -18,7 +18,7 @@ npm install chicaga-tour --save
 Import styles to App.vue:
 
 ```css
-@import '~chicaga-tour/dist/css/chicaga-tour.min.css';
+@import '~chicaga-tour/dist/chicaga-tour.min.css';
 ```
 
 When using with a module system, you must explicitly install chicaga-tour via Vue.use():
@@ -34,7 +34,7 @@ Vue.use(ChicagaTour);
 
 ```vue
 <template>
-  <div>
+  <div class='tour-example'>
     Testing
   </div>
 </template>
@@ -49,9 +49,10 @@ Vue.use(ChicagaTour);
         });
 
         tour.addStep({
-          title: 'Welcome to Chicaga-tour',
-          text: `Creating a tour is easy. too!\
-          Just create a \`Tour\` instance, and add as many steps as you want.`,
+          title: 'Реферальная программа',
+          text: 'При клике на аватарку или ФИО вы попадете в <b>личный кабинет</b>,где сможете изменить свои данные.\
+          При клике на стрелочку появится меню где расположены кнопки для связи с куратором,\
+          опционально с преподавателем, <i>зависит от тарифа</i>, так же настройки личного кабинета.',
           attachTo: {
             element: '.tour-example',
             on: 'bottom'
@@ -59,16 +60,16 @@ Vue.use(ChicagaTour);
           buttons: [
             {
               action() {
-                return this.back();
+                return this.cancel();
               },
               classes: 'shepherd-button-secondary',
-              text: 'Back'
+              text: 'Пропустить'
             },
             {
               action() {
                 return this.next();
               },
-              text: 'Next'
+              text: 'Далее'
             }
           ],
           id: 'creating'
