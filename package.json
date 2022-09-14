@@ -1,5 +1,5 @@
 {
-  "name": "chicaga-tour",
+  "name": "@deadmazay1994/chicaga-tour",
   "version": "0.1.6",
   "description": "Wrapper for the site tour library Shepherd with chigaca styles.",
   "author": {
@@ -92,10 +92,7 @@
     "chicaga",
     "shepherd"
   ],
-  "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+  "license": "ISC",
   "release-it": {
     "hooks": {
       "after:bump": "yarn prepublish"
@@ -122,5 +119,8 @@
   "volta": {
     "node": "12.16.2",
     "yarn": "1.22.10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
